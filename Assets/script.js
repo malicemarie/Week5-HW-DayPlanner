@@ -4,6 +4,11 @@ var calendarEvent;
 var userEvents = {};
 var viewEvent;
 
+if (localStorage.getItem("Event") === null) {
+  userEvents = {};
+} else {
+  userEvents = JSON.parse(localStorage.getItem("Event"));
+}
 //Create Calendar blocks. Date/Input/Save button
 
 for (var i = 0; i < hours.length; i++) {
@@ -32,7 +37,6 @@ function saveEvent() {
   var target = $(this);
   var eventName = target.siblings("input").val();
   var selectedTimeSlot = target.siblings("h1").text();
-  calendarEvent = $("<input>").val();
   userEvents[selectedTimeSlot] = eventName;
   console.log(userEvents);
   localStorage.setItem("Event", JSON.stringify(userEvents));
