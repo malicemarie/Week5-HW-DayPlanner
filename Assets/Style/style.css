@@ -1,0 +1,15 @@
+input {
+  width: 500px;
+  height: 50px;
+  background-color: darkolivegreen;
+  color: white;
+}
+
+button {
+  height: 50px;
+  background-color: gray;
+}
+
+button.hover {
+  background-color: white;
+}
