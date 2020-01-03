@@ -1,0 +1,39 @@
+input {
+  width: 960px;
+  height: 50px;
+  background-color: #77815c;
+  color: white;
+  margin-right: 20px;
+  margin-bottom: 20px;
+}
+
+button {
+  height: 50px;
+  width: 100px;
+  background-color: #887ea3;
+}
+
+button.hover {
+  color: white;
+}
+
+h1 {
+  font-size: 18px;
+  color: #292c22;
+}
+
+.today {
+  font-size: 32px;
+  color: #292c22;
+  text-align: center;
+}
+
+body {
+  justify-content: center;
+  background-image: url("../Assets/leaves-pattern.png");
+  /* background: #e7e9e2; */
+  margin: 50px;
+}
+
+main {
+}

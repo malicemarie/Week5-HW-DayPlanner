@@ -1,21 +1,11 @@
-var hours = [
-  "9 am",
-  "10 am",
-  "11 am",
-  "12 pm",
-  "1 pm",
-  "2 pm",
-  "3 pm",
-  "4 pm",
-  "5 pm"
-];
+var hours = ["9am", "10am", "11am", "12pm", "1pm", "2pm", "3pm", "4pm", "5pm"];
 var calendarBody = $(".calendar-body");
 var calendarEvent;
 var userEvents = {};
 var viewEvent;
-var today = new Date();
-var time =
-  today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+var today = moment().format("MMMM Do YYYY");
+// var time =
+//   today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
 
 //Make sure the correct info displays on refresh
 if (localStorage.getItem("Event") === null) {
@@ -24,6 +14,7 @@ if (localStorage.getItem("Event") === null) {
   userEvents = JSON.parse(localStorage.getItem("Event"));
 }
 
+$(".today").text(today);
 //Create Calendar blocks. Date/Input/Save button
 for (var i = 0; i < hours.length; i++) {
   var timeSlot = $("<div>");
@@ -81,10 +72,10 @@ function setCalendarColor() {
 
   for (var i = 0; i < hoursEl.length; i++) {
     if (localTime > $(hoursEl[i]).attr("data-time")) {
-      $(inputAreas[i]).css("background-color", "red");
+      $(inputAreas[i]).css("background-color", "#6f6f6f");
     }
     if (localTime < $(hoursEl[i]).attr("data-time")) {
-      $(inputAreas[i]).css("background-color", "yellow");
+      $(inputAreas[i]).css("background-color", "#5f674a");
     }
   }
 }
