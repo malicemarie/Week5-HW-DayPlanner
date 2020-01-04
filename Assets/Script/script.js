@@ -77,5 +77,14 @@ function setCalendarColor() {
 }
 
 setCalendarColor();
-displayEvent();
 $("button").on("click", saveEvent);
+displayEvent();
+
+// // get the text
+// var text = $("#test").text();
+
+// // set the item in localStorage
+// localStorage.setItem("test", text);
+
+// // alert the value to check if we got it
+// alert(localStorage.getItem("test"));
