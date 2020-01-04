@@ -37,12 +37,11 @@ for (var i = 0; i < hours.length; i++) {
 
 //Store Input to local storage
 function saveEvent() {
-  console.log(userEvents, "first call");
   var target = $(this);
   var eventName = target.siblings("input").val();
   var selectedTimeSlot = target.siblings("h1").text();
   userEvents[selectedTimeSlot] = eventName;
-  console.log(userEvents, "called in function");
+
   localStorage.setItem("Event", JSON.stringify(userEvents));
 }
 
@@ -52,13 +51,11 @@ function displayEvent() {
   // console.log(viewEvents);
   for (var i = 0; i < hours.length; i++) {
     var objectValue = viewEvent[hours[i]];
-    console.log(objectValue, "p am value");
+
     if (objectValue === undefined) {
-      console.log("nothing here");
     }
     var timeSlot = $("#" + hours[i]).siblings("input");
     timeSlot.attr("value", objectValue);
-    console.log(timeSlot, objectValue, "input filed");
   }
 }
 
@@ -68,7 +65,6 @@ function setCalendarColor() {
   var localTime = moment().hour();
   var hoursEl = $("h1");
   var inputAreas = $("input");
-  console.log($(hoursEl[0]).attr("data-time"), localTime);
 
   for (var i = 0; i < hoursEl.length; i++) {
     if (localTime > $(hoursEl[i]).attr("data-time")) {
@@ -83,12 +79,3 @@ function setCalendarColor() {
 setCalendarColor();
 displayEvent();
 $("button").on("click", saveEvent);
-
-// // get the text
-// var text = $("#test").text();
-
-// // set the item in localStorage
-// localStorage.setItem("test", text);
-
-// // alert the value to check if we got it
-// alert(localStorage.getItem("test"));
