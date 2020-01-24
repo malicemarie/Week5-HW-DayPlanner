@@ -1,5 +1,7 @@
 # Week5 - Day Planner
 
+[Daily Calendar](https://malicemarie.github.io/Week5-HW-DayPlanner/)
+
 Homework for week 5
 
 ## Description
